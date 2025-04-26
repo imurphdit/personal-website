@@ -1,8 +1,10 @@
 const express = require('express')
 const sequelize = require('./config.js')
-const userRouter = require('./routes/userRouter.js')
-const runRouter = require('./routes/runRouter.js')
-const gameRouter = require('./routes/gameRouter.js')
+const speedrunUserRouter = require('./routes/speedruns/userRouter.js')
+const spedrunRunRouter = require('./routes/speedruns/runRouter.js')
+const speedrunGameRouter = require('./routes/speedruns/gameRouter.js')
+
+const catSurveyRouter = require('./routes/cats/surveyRouter.js')
 
 const app = express()
 const port = 3000
@@ -10,17 +12,21 @@ const port = 3000
 //Database connection
 sequelize.sync({ force: true });
 
-//Admin Page
-app.get('/api', (req, res) => {
-    res.sendFile('./static/index.html', {root: __dirname })
+
+
+// SPEEDRUNS
+
+app.get('/api/speedruns/admin', (req, res) => {
+    res.sendFile('./static/speedruns-admin.html', {root: __dirname })
 })
 
+app.use('/api/speedruns/users', speedrunUserRouter)
+app.use('/api/speedruns/runs', spedrunRunRouter)
+app.use('/api/speedruns/games', speedrunGameRouter)
 
-//API Routes
-app.use('/api/users', userRouter)
-app.use('/api/runs', runRouter)
-app.use('/api/games', gameRouter)
 
+// CATS
+app.use('/api/cats/survey', catSurveyRouter)
 
 app.listen(port, () => {
     console.log(`Running on port ${port}`)

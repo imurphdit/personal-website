@@ -9,17 +9,17 @@
     <body>
         <h1 id="title">Cat Behavioral Survey</h1>
         <p id="description">A survey form for my first project at freeCodeCamp</p>
-        <form id="survey-form">
+        <form id="survey-form" action="http://localhost:3000/api/cats/survey" method="POST">
             <fieldset>
                 <legend>Who are you?</legend>
-                <label id="name-label">Name: <input id="name" type="text" placeholder="Jeffrey" required></label>
-                <label id="email-label">Email: <input id="email" type="email" placeholder="Epstein" required></label>
-                <label id="number-label">Age (optional): <input id="number" type="number" placeholder="13" min="12" max="25"></label>
+                <label id="name-label">Name: <input id="name" name="name" type="text" placeholder="Jeffrey" required></label>
+                <label id="email-label">Email: <input id="email" name="email" type="email" placeholder="Epstein" required></label>
+                <label id="number-label">Age (optional): <input id="number" name="age" type="number" placeholder="13" min="12" max="25"></label>
             </fieldset>
             <fieldset>
                 <legend>Nature of Behavior?</legend>
                 <label>
-                    <select id="dropdown">
+                    <select id="dropdown" name="behavior">
                         <option>(Please select one)</option>
                         <option>Scooped litter out of the box.</option>
                         <option>Puked</option>
@@ -29,18 +29,18 @@
             </fieldset>
             <fieldset>
                 <legend>Which Cat?</legend>
-                <label><input type="radio" name="type" value="ramon">Ramon</input></label>
-                <label><input type="radio" name="type" value="winston">Winston</input></label>
-                <label><input type="radio" name="type" value="amelia">Amelia</input></label>
-                <label><input type="radio" name="type" value="richard">RICHARD</input></label>
+                <label><input type="radio" name="cat" value="ramon">Ramon</input></label>
+                <label><input type="radio" name="cat" value="winston">Winston</input></label>
+                <label><input type="radio" name="cat" value="amelia">Amelia</input></label>
+                <label><input type="radio" name="cat" value="richard">RICHARD</input></label>
             </fieldset>
             <fieldset>
                 <legend>How did this make you feel?</legend>
-                <label><input type="checkbox" value="0">Scared</label>
-                <label><input type="checkbox" value="1">Liable</label>
-                <label><input type="checkbox" value="2">Concerned</label>
-                <label><input type="checkbox" value="3">Bewildered</label>
-                <label><input type="checkbox" value="4">Like our doom as a species in imminent</label>
+                <label><input type="checkbox" name="effect" value="Scared">Scared</label>
+                <label><input type="checkbox" name="effect" value="Liable">Liable</label>
+                <label><input type="checkbox" name="effect" value="Concerned">Concerned</label>
+                <label><input type="checkbox" name="effect" value="Bewildered">Bewildered</label>
+                <label><input type="checkbox" name="effect" value="Like our doom as a species in imminent">Like our doom as a species in imminent</label>
             </fieldset>
             <fieldset>
                 <legend>Anything else to say?</legend>

@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const Run = require('../models/runModel')
+const Run = require('../../models/speedruns/runModel')
 
 const getRuns = async () => {
     const runs = await Run.findAll()

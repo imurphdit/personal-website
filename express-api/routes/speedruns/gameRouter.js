@@ -1,6 +1,6 @@
 const express = require('express')
 const gameRouter = express.Router()
-const { getGames, createGame, deleteGame, getGame, changeGame } = require('../controlla/gameController')
+const { getGames, createGame, deleteGame, getGame, changeGame } = require('../../controlla/speedruns/gameController')
 
 gameRouter.use(express.json())
 gameRouter.use(express.urlencoded({extended: false}))

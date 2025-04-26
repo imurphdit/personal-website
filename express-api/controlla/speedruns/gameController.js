@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const Game = require('../models/gameModel')
+const Game = require('../../models/speedruns/gameModel')
 
 const getGames = async () => {
     const games = await Game.findAll()

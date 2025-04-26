@@ -1,6 +1,6 @@
 const express = require('express')
 const userRouter = express.Router()
-const { getUsers, createUser, deleteUser, getUser, changeUser } = require('../controlla/userController')
+const { getUsers, createUser, deleteUser, getUser, changeUser } = require('../../controlla/speedruns/userController')
 
 userRouter.use(express.json())
 userRouter.use(express.urlencoded({extended: false}))
