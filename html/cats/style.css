@@ -1,0 +1,12 @@
+body {
+    max-width: 500px;
+    margin: auto;
+}
+
+h1, p {
+    text-align: center;
+}
+
+label {
+    display: block;
+}

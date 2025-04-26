@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <Head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <title>Survey Form</title>
+    </Head>
+
+    <body>
+        <h1 id="title">Cat Behavioral Survey</h1>
+        <p id="description">A survey form for my first project at freeCodeCamp</p>
+        <form id="survey-form">
+            <fieldset>
+                <legend>Who are you?</legend>
+                <label id="name-label">Name: <input id="name" type="text" placeholder="Jeffrey" required></label>
+                <label id="email-label">Email: <input id="email" type="email" placeholder="Epstein" required></label>
+                <label id="number-label">Age (optional): <input id="number" type="number" placeholder="13" min="12" max="25"></label>
+            </fieldset>
+            <fieldset>
+                <legend>Nature of Behavior?</legend>
+                <label>
+                    <select id="dropdown">
+                        <option>(Please select one)</option>
+                        <option>Scooped litter out of the box.</option>
+                        <option>Puked</option>
+                        <option>Made you feel lesser than you are</option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Which Cat?</legend>
+                <label><input type="radio" name="type" value="ramon">Ramon</input></label>
+                <label><input type="radio" name="type" value="winston">Winston</input></label>
+                <label><input type="radio" name="type" value="amelia">Amelia</input></label>
+                <label><input type="radio" name="type" value="richard">RICHARD</input></label>
+            </fieldset>
+            <fieldset>
+                <legend>How did this make you feel?</legend>
+                <label><input type="checkbox" value="0">Scared</label>
+                <label><input type="checkbox" value="1">Liable</label>
+                <label><input type="checkbox" value="2">Concerned</label>
+                <label><input type="checkbox" value="3">Bewildered</label>
+                <label><input type="checkbox" value="4">Like our doom as a species in imminent</label>
+            </fieldset>
+            <fieldset>
+                <legend>Anything else to say?</legend>
+                <textarea rows="2" cols="50" placeholder="They are a good kitty anyways."></textarea>
+            </fieldset>
+            <input id="submit" type="submit" value="submit">
+        </form>
+    </body>
+</html>
