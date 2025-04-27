@@ -10,7 +10,13 @@ const app = express()
 const port = 3000
 
 //Database connection
-sequelize.sync({ force: true });
+sequelize.sync()
+    .then(() => {
+        console.log('Database synced')
+    })
+    .catch((err) => {
+        console.error('Error syncing database', err);
+    })
 
 
 
