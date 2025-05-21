@@ -1,6 +1,6 @@
 const express = require('express')
 const runRouter = express.Router()
-const { getRuns, createRun, deleteRun, getRun, changeRun } = require('../../controlla/speedruns/runController')
+const { getRuns, createRun, deleteRun, getRun, changeRun } = require('../../APIs/speedruns/controllers/runController')
 
 runRouter.use(express.json())
 runRouter.use(express.urlencoded({extended: false}))

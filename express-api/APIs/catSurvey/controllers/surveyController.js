@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const Survey = require('../../models/cats/surveyModel')
+const Survey = require('../models/surveyModel')
 
 const getSurveys = async () => {
     try {

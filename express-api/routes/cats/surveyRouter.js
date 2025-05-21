@@ -1,6 +1,6 @@
 const express = require('express')
 const surveyRouter = express.Router()
-const { addSurvey, getSurveys } = require('../../controlla/cats/surveyController')
+const { addSurvey, getSurveys } = require('../../APIs/catSurvey/controllers/surveyController')
 
 surveyRouter.use(express.json())
 surveyRouter.use(express.urlencoded({extended: false}))

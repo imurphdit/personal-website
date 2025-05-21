@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const User = require('../../models/speedruns/userModel')
+const User = require('../models/userModel')
 
 const getUsers = async () => {
     const users = await User.findAll()
