@@ -38,7 +38,7 @@ app.post('/assassin/login', async (req, res) => {
   
   if (agent) {
     const pin = agent.id.toString();
-    res.redirect('/agent/' + Buffer.from(pin).toString('base64'));
+    res.redirect('/assassin/agent/' + Buffer.from(pin).toString('base64'));
   } else {
     res.sendStatus(404);
   }
