@@ -10,6 +10,15 @@ const Agent = require("./agent.model")
 app.use(bp.urlencoded({ extended: false }));
 app.use(bp.json());
 
+//Database connection
+sequelize.sync()
+    .then(() => {
+        console.log('Database synced')
+    })
+    .catch((err) => {
+        console.error('Error syncing database', err);
+    })
+
 app.get('/assassin/admin', (req, res) => {
   res.render('adminPage');
 })
