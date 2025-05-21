@@ -7,8 +7,6 @@ const speedrunGameRouter = require('./routes/speedruns/gameRouter.js')
 
 const catSurveyRouter = require('./routes/cats/surveyRouter.js')
 
-const massAssassinAgentRouter = require('./routes/massAssassin/agentRouter.js')
-
 const app = express()
 const port = 3000
 
