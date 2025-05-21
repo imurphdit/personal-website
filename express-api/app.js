@@ -37,14 +37,6 @@ app.use('/speedruns/games', speedrunGameRouter)
 // CATS
 app.use('/cats/survey', catSurveyRouter)
 
-
-// MASS ASSASSIN
-app.get('/massassassin/admin', (req, res) => {
-    res.sendFile('./static/massassassin-admin.html', {root: __dirname })
-})
-
-app.use('/massassassin/agents', massAssassinAgentRouter)
-
 app.listen(port, () => {
     console.log(`Running on port ${port}`)
 })

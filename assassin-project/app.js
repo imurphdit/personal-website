@@ -1,13 +1,11 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 4000
 const bp = require("body-parser");
 app.set('view engine','ejs');
 
 const sequelize = require("./sequelizeConfig")
 const Agent = require("./agent.model")
-sequelize.sync({ force: true });
-
 
 app.use(bp.urlencoded({ extended: false }));
 app.use(bp.json());
