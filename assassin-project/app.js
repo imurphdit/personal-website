@@ -10,17 +10,17 @@ const Agent = require("./agent.model")
 app.use(bp.urlencoded({ extended: false }));
 app.use(bp.json());
 
-app.get('/admin', (req, res) => {
+app.get('/assassin/admin', (req, res) => {
   res.render('adminPage');
 })
 
-app.get('/login', (req, res) => {
+app.get('/assassin/login', (req, res) => {
   res.render('login');
 })
 
 
 // Login redirect
-app.post('/login', async (req, res) => {
+app.post('/assassin/login', async (req, res) => {
 
   const pin = req.body;
   console.log(pin);
@@ -37,7 +37,7 @@ app.post('/login', async (req, res) => {
 
 
 // Player login via base64ID
-app.get('/agent/:id', async (req, res) => {
+app.get('/assassin/agent/:id', async (req, res) => {
 
   //Convert ID from base64 to agent ID in database
   const agentId = Buffer.from(req.params.id, 'base64').toString('ascii')
@@ -52,21 +52,21 @@ app.get('/agent/:id', async (req, res) => {
 
 
 // Get all players
-app.get('/api/agent/', async (req, res) => {
+app.get('/assassin/api/agent/', async (req, res) => {
   const agents = await Agent.findAll();
   res.json(agents); 
 });
 
 
 // Create a player 
-app.post('/api/agent/', async (req, res) => {
+app.post('/assassin/api/agent/', async (req, res) => {
   const agent = await Agent.create(req.body);
   res.json(agent);
 });
 
 
 // Kill a player
-app.post('/api/agent/kill/:name', async (req, res) => {
+app.post('/assassin/api/agent/kill/:name', async (req, res) => {
   const agent = await Agent.findOne({ where: { target: req.params.name } })
   const agentKilled = await Agent.findOne( { where: { name: req.params.name }})
   
@@ -83,7 +83,7 @@ app.post('/api/agent/kill/:name', async (req, res) => {
 
 
 // Update player target
-app.post('/api/agent/target', async (req, res)  => {
+app.post('/assassin/api/agent/target', async (req, res)  => {
   console.log(req.body.target)
   const agent = await Agent.update(
     { target: req.body.target},
